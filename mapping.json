@@ -4,13 +4,21 @@
     "version": "1.0.1",
     "routes": [
       {
-        "path": "/:name",
-        "method": "get",
+        "path": "/signUp",
+        "method": "post",
         "public": true,
-        "description": "Displays 'Hello, ${name || 'World'}'",
+        "description": "Creates user account.",
+        "expectedInput": {
+          "user": {
+            "name": "String",
+            "email": "String",
+            "profile": "ObjectId",
+            "password": "String"
+          }
+        },
         "_private": {
-          "controller": "testing",
-          "params": ["params.name"]
+          "controller": "signUp",
+          "params": ["body.user"]
         }
       }
     ]

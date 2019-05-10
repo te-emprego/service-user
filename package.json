@@ -14,8 +14,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "crypto": "^1.0.1",
     "dotenv": "^8.0.0",
     "module-alias": "^2.2.0",
+    "nodemailer": "^6.1.1",
+    "nodemailer-express-handlebars": "^3.0.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "te-emprego-sdk": "github:te-emprego/sdk"
   },
   "_moduleAliases": {

@@ -25,6 +25,7 @@ module.exports = {
         'no-return-assign': 'off',
         'linebreak-style': 'off',
         'import/no-extraneous-dependencies': 'off',
-        'import/no-dynamic-require': 'off'
+        'import/no-dynamic-require': 'off',
+        'object-curly-newline': 'off'
     }
 };
