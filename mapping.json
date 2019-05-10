@@ -1,0 +1,18 @@
+{
+  "app": {
+    "name": "service-base",
+    "version": "1.0.1",
+    "routes": [
+      {
+        "path": "/:name",
+        "method": "get",
+        "public": true,
+        "description": "Displays 'Hello, ${name || 'World'}'",
+        "_private": {
+          "controller": "testing",
+          "params": ["params.name"]
+        }
+      }
+    ]
+  }
+}

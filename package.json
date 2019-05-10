@@ -1,0 +1,33 @@
+{
+  "name": "te-emprego-service-user",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "te-emprego-service": "app.js"
+  },
+  "scripts": {
+    "start": "node bin/app",
+    "dev": "nodemon bin/app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "module-alias": "^2.2.0",
+    "te-emprego-sdk": "github:te-emprego/sdk"
+  },
+  "_moduleAliases": {
+    "@": "src",
+    "@sdk": "./.sdk",
+    "@controller": "src/controller",
+    "@model": "src/model.js"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "nodemon": "^1.19.0"
+  }
+}
