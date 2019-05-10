@@ -22,7 +22,7 @@ const sendMail = async user => new Promise((resolve, reject) => {
     subject: 'Bem vindo',
     template: 'bem-vindo',
     context: {
-      token: user.email_confirmation_token,
+      token: user.emailConfirmationToken,
       name: user.name,
       email: user.email,
       appBase: 'https://app.teemprego.com.br',
@@ -41,11 +41,11 @@ const sendMail = async user => new Promise((resolve, reject) => {
 });
 
 const saveUser = async user => new Promise((resolve, reject) => {
-  user.save((error) => {
+  user.save((error, newUser) => {
     if (error) { reject({ message: error.message, status: 500 }); }
-    const newUser = { ...user };
+    // eslint-disable-next-line no-param-reassign
     delete newUser.password;
-    resolve(newUser);
+    resolve(newUser.toObject());
   });
 });
 
@@ -54,7 +54,7 @@ const addUser = async (user) => {
   newUser.avatar = newUser.gravatar();
 
   const token = await generateToken();
-  newUser.email_confirmation_token = token;
+  newUser.emailConfirmationToken = token;
 
   return newUser;
 };

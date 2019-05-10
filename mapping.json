@@ -31,6 +31,28 @@
           "controller": "getAllUsers",
           "params": ["params.id"]
         }
+      },
+      {
+        "path": "/signIn",
+        "method": "post",
+        "public": true,
+        "description": "Sign in.",
+        "expectedInput": {},
+        "_private": {
+          "controller": "signIn",
+          "params": ["body.credentials"]
+        }
+      },
+      {
+        "path": "/confirm-email/:token",
+        "method": "get",
+        "public": true,
+        "description": "Confirm email.",
+        "expectedInput": {},
+        "_private": {
+          "controller": "confirmEmail",
+          "params": ["params.token"]
+        }
       }
     ]
   }

@@ -60,17 +60,17 @@ const UserSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  email_confirmation_token: {
+  emailConfirmationToken: {
     type: String,
   },
-  email_confirmed: {
+  emailConfirmed: {
     type: Boolean,
     default: false,
   },
-  new_email: {
+  newEmail: {
     type: String,
   },
-  new_email_confirmation_token: {
+  newEmailConfirmationToken: {
     type: String,
   },
 });
