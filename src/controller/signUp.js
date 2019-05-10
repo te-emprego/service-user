@@ -59,7 +59,7 @@ const addUser = async (user) => {
 
 module.exports = async (user) => {
   const { data, status } = await canIAddUser(user)
-    .then(user => addUser(user))
+    .then(addUser)
     .then(saveUser)
     .then(sendMail)
     .catch(res.error);
