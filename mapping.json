@@ -37,7 +37,12 @@
         "method": "post",
         "public": true,
         "description": "Sign in.",
-        "expectedInput": {},
+        "expectedInput": {
+          "credentilals": {
+            "email": "String",
+            "password": "String"
+          }
+        },
         "_private": {
           "controller": "signIn",
           "params": ["body.credentials"]
@@ -52,6 +57,19 @@
         "_private": {
           "controller": "confirmEmail",
           "params": ["params.token"]
+        }
+      },
+      {
+        "path": "/forgot-password",
+        "method": "post",
+        "public": true,
+        "description": "Send an email to user with a token to reset password.",
+        "expectedInput": {
+          "email": "String"
+        },
+        "_private": {
+          "controller": "forgotPassword",
+          "params": ["body.email"]
         }
       }
     ]

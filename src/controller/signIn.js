@@ -33,7 +33,7 @@ const generateToken = async user => new Promise(async (resolve, reject) => {
   const newUser = { ...user };
   const newToken = await token
     .encode(user)
-    .catch(error => reject({ message: error.message, statys: 500 }));
+    .catch(error => reject({ message: error.message, status: 500 }));
 
   delete newUser.password;
 
