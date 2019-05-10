@@ -43,7 +43,9 @@ const sendMail = async user => new Promise((resolve, reject) => {
 const saveUser = async user => new Promise((resolve, reject) => {
   user.save((error) => {
     if (error) { reject({ message: error.message, status: 500 }); }
-    resolve(user);
+    const newUser = { ...user };
+    delete newUser.password;
+    resolve(newUser);
   });
 });
 

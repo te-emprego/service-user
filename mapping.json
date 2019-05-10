@@ -20,6 +20,17 @@
           "controller": "signUp",
           "params": ["body.user"]
         }
+      },
+      {
+        "path": "/users/:id?",
+        "method": "get",
+        "public": true,
+        "description": "Get all users.",
+        "expectedInput": {},
+        "_private": {
+          "controller": "getAllUsers",
+          "params": ["params.id"]
+        }
       }
     ]
   }
